@@ -1,0 +1,29 @@
+# Ignore Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environments
+.env/
+venv/
+ENV/
+env/
+
+# Ignore dotenv secret file
+.env
+
+# Ignore system/IDE files
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Ignore driver or OS-specific files
+chromedriver*
+chromedriver-*/  # just in case a folder like this reappears
+
+# Ignore logs or temporary files
+*.log
+*.tmp
+*.bak
