@@ -2,14 +2,15 @@ name: DealTracker
 
 on:
   schedule:
-    - cron: "*/60 * * * *"  # Every 60 minutes
-  workflow_dispatch:       # Manual trigger
+    - cron: "0 * * * *"  # Every 60 minutes, on the hour (UTC)
+  workflow_dispatch:       # Allow manual trigger
 
 jobs:
   tracker:
     runs-on: ubuntu-latest
+
     permissions:
-      contents: write    # Grant write access to repository contents
+      contents: write    # Needed to push data.json
 
     steps:
       - name: Checkout repository
@@ -33,6 +34,9 @@ jobs:
           sudo apt-get install -y wget unzip
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -fy install
+
+      - name: Clean up .deb file
+        run: rm -f google-chrome-stable_current_amd64.deb
 
       - name: Install jq
         run: sudo apt-get install -y jq
@@ -65,8 +69,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add data.json
+          git add data.json || true
           git commit -m "Update data.json [skip ci]" || echo "No changes to commit"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
