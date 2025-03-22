@@ -2,15 +2,15 @@ name: DealTracker
 
 on:
   schedule:
-    - cron: "0 */2 * * *"  # Every 2 hours, on the hour (UTC)
-  workflow_dispatch:       # Allow manual trigger
+    - cron: "0 */2 * * *"  # Every 2 hours, UTC
+  workflow_dispatch:
 
 jobs:
   tracker:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write    # Needed to push data.json
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -56,14 +56,12 @@ jobs:
           fi
           sudo chmod +x /usr/local/bin/chromedriver
 
-      - name: Create .env file for email credentials
-        run: |
-          echo "EMAIL_SENDER=${{ secrets.EMAIL_SENDER }}" > .env
-          echo "EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }}" >> .env
-          echo "EMAIL_RECEIVER=${{ secrets.EMAIL_RECEIVER }}" >> .env
-
       - name: Run DealTracker
         run: python tracker.py
+        env:
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
 
       - name: Commit and push updated data.json
         run: |
