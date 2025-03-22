@@ -2,7 +2,7 @@ name: DealTracker
 
 on:
   schedule:
-    - cron: "0 * * * *"  # Every 60 minutes, on the hour (UTC)
+    - cron: "0 */2 * * *""  # Every 2 hours, on the hour (UTC)
   workflow_dispatch:       # Allow manual trigger
 
 jobs:
