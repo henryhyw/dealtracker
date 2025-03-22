@@ -1,1 +1,222 @@
-[]
+[
+  {
+    "name": "Arcteryx Rush Bib GTX Mens Pants - Regular - Boxcar",
+    "link": "https://www.wildearth.com.au/buy/arcteryx-rush-bib-mens-boxcar-l-r/X00000605903-L-R",
+    "original": 1100.0,
+    "sale": 770.0,
+    "discount": 30,
+    "image": "https://www.wildearth.com.au/assets/thumb/X00000605903-L-R.png?20240404084629",
+    "brand": "Arcteryx",
+    "gender": "Men",
+    "size": "S"
+  },
+  {
+    "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
+    "link": "https://www.wildearth.com.au/buy/arcteryx-rho-lt-bottom-mens-smoke-bluff-s-r/X00000486402-S-R",
+    "original": 170.0,
+    "sale": 119.0,
+    "discount": 30,
+    "image": "https://www.wildearth.com.au/assets/thumb/X00000486402-S-R.jpg?20240404084629",
+    "brand": "Arcteryx",
+    "gender": "Men",
+    "size": "S"
+  },
+  {
+    "name": "Arcteryx Sabre GTX Mens Ski Pants - Regular - Black",
+    "link": "https://www.wildearth.com.au/buy/arcteryx-sabre-pant-mens-black-mr/L07987900-MR",
+    "original": 1000.0,
+    "sale": 700.0,
+    "discount": 30,
+    "image": "https://www.wildearth.com.au/assets/thumb/L07987900-MR.jpg?20240404084629",
+    "brand": "Arcteryx",
+    "gender": "Men",
+    "size": "S"
+  },
+  {
+    "name": "Patagonia Breezefarer Cap - Lose It Crest/ Sienna Clay",
+    "link": "https://www.wildearth.com.au/buy/patagonia-breezefarer-cap-lose-it-crest-sienna-cla/37993-LISC-ALL",
+    "original": 49.95,
+    "sale": 27.47,
+    "discount": 45,
+    "image": "https://www.wildearth.com.au/assets/thumb/37993-LISC-ALL.png?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Recycled Market Tote Bag - 73 Skyline/Classic Tan",
+    "link": "https://www.wildearth.com.au/buy/patagonia-recycled-market-tote-73-skyline-classic/59250-SKTA-ALL",
+    "original": 69.95,
+    "sale": 38.47,
+    "discount": 45,
+    "image": "https://www.wildearth.com.au/assets/thumb/59250-SKTA-ALL.jpg?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Worn Wear Repair Roll - Black",
+    "link": "https://www.wildearth.com.au/buy/patagonia-worn-wear-repair-roll-black/49565-BLK-ALL",
+    "original": 79.95,
+    "sale": 47.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/49565-BLK-ALL.jpg",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Refugio 26L Daypack - Vessel Blue",
+    "link": "https://www.wildearth.com.au/buy/patagonia-refugio-day-pack-26l-vessel-blue/47913-VSLB-ALL",
+    "original": 179.95,
+    "sale": 107.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/47913-VSLB-ALL.jpg?20240715145204",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Guidewater Sling 15L Waterproof Bag - Pigeon Blue",
+    "link": "https://www.wildearth.com.au/buy/patagonia-guidewater-sling-15l-pigeon-blue-all/49145-PGBE-ALL",
+    "original": 429.95,
+    "sale": 214.98,
+    "discount": 50,
+    "image": "https://www.wildearth.com.au/assets/thumb/49145-PGBE-ALL.jpg?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Boardshort Label Funfarer Unisex Cap - Cliffs and Waves: Utility Blue",
+    "link": "https://www.wildearth.com.au/buy/patagonia-boardshort-label-funfarer-cap-cliffs-and/38278-CWUE-ALL",
+    "original": 59.95,
+    "sale": 35.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/38278-CWUE-ALL.png?20240724151935",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia UPF Sun Mask - Morning Migration: Pine Needle Green",
+    "link": "https://www.wildearth.com.au/buy/patagonia-sun-mask-morning-migration-pine-needle-g/22396-MPGN-ALL",
+    "original": 49.95,
+    "sale": 29.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/22396-MPGN-ALL.jpg?20241001165048",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia UPF Sun Mask - Utility Blue",
+    "link": "https://www.wildearth.com.au/buy/patagonia-sun-mask-utility-blue/22396-UTB-ALL",
+    "original": 49.95,
+    "sale": 29.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/22396-UTB-ALL.png?20240815104524",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Fitz Roy Icon Responsibili-Tee Unisex T-Shirt - Milled Yellow",
+    "link": "https://www.wildearth.com.au/buy/patagonia-fitz-roy-icon-responsibili-tee-milled-ye/37665-MILY-XL",
+    "original": 79.95,
+    "sale": 47.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/37665-MILY-XL.png?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Fitz Roy Icon Responsibili-Tee Unisex T-Shirt - Echo Purple",
+    "link": "https://www.wildearth.com.au/buy/patagonia-fitz-roy-icon-responsibili-tee-echo-purp/37665-ECPU-S",
+    "original": 79.95,
+    "sale": 47.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/37665-ECPU-S.png?20240815123426",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Tin Shed Hat - Ink Black",
+    "link": "https://www.wildearth.com.au/buy/patagonia-tin-shed-hat-ink-black/33377-INBK-ALL",
+    "original": 69.95,
+    "sale": 38.47,
+    "discount": 45,
+    "image": "https://www.wildearth.com.au/assets/thumb/33377-INBK-ALL.png?20240815121216",
+    "brand": "Patagonia",
+    "gender": "Unisex",
+    "size": null
+  },
+  {
+    "name": "Patagonia Fitz Roy Icon Uprisal Womens Fleece Sweatpants - Ink Black",
+    "link": "https://www.wildearth.com.au/buy/patagonia-womens-fitz-roy-icon-uprisal-sweatpants/26067-INBK-M",
+    "original": 129.95,
+    "sale": 77.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/26067-INBK-M.jpg?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Women",
+    "size": "M"
+  },
+  {
+    "name": "Patagonia Down Sweater Womens Insulated Vest - Madder Red",
+    "link": "https://www.wildearth.com.au/buy/patagonia-womens-down-sweater-vest-madder-red-m/84629-MADR-M",
+    "original": 349.95,
+    "sale": 192.47,
+    "discount": 45,
+    "image": "https://www.wildearth.com.au/assets/thumb/84629-MADR-M.png?20240822102429",
+    "brand": "Patagonia",
+    "gender": "Women",
+    "size": "M"
+  },
+  {
+    "name": "Patagonia Nano-Air Light Hybrid Womens Jacket - Black",
+    "link": "https://www.wildearth.com.au/buy/patagonia-womens-nano-air-light-hybrid-jackets-bla/84352-BLK-L",
+    "original": 399.95,
+    "sale": 219.97,
+    "discount": 45,
+    "image": "https://www.wildearth.com.au/assets/thumb/84352-BLK-L.jpg?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Women",
+    "size": "M"
+  },
+  {
+    "name": "Patagonia Endless Run Womens Shorts - Black",
+    "link": "https://www.wildearth.com.au/buy/patagonia-womens-endless-run-shorts-black-m/24876-BLK-M",
+    "original": 119.95,
+    "sale": 65.97,
+    "discount": 45,
+    "image": "https://www.wildearth.com.au/assets/thumb/24876-BLK-M.jpg?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Women",
+    "size": "M"
+  },
+  {
+    "name": "Patagonia Capilene Cool Trail Womens Tank - Milkweed Mauve",
+    "link": "https://www.wildearth.com.au/buy/patagonia-womens-cap-cool-trail-tank-milkweed-mauv/24518-MLKE-L",
+    "original": 59.95,
+    "sale": 35.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/24518-MLKE-L.png?20240724150720",
+    "brand": "Patagonia",
+    "gender": "Women",
+    "size": "M"
+  },
+  {
+    "name": "Patagonia Chouinard Crest Ringer Responsibili-Tee Womens T-Shirt - Sienna Clay",
+    "link": "https://www.wildearth.com.au/buy/patagonia-womens-chouinard-crest-ringer-responsibi/37771-SINY-M",
+    "original": 79.95,
+    "sale": 47.97,
+    "discount": 40,
+    "image": "https://www.wildearth.com.au/assets/thumb/37771-SINY-M.png?20240404084629",
+    "brand": "Patagonia",
+    "gender": "Women",
+    "size": "M"
+  }
+]
