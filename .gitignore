@@ -28,4 +28,4 @@ chromedriver-*/  # just in case a folder like this reappears
 *.tmp
 *.bak
 
-google-chrome-stable_current_amd64.deb
+*.deb
