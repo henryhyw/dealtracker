@@ -2,24 +2,21 @@ name: DealTracker
 
 on:
   schedule:
-    - cron: "0 */2 * * *"  # Every 2 hours, UTC
+    - cron: "0 */3 * * *"  # Every 3 hours (UTC)
   workflow_dispatch:
 
 jobs:
   tracker:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: true
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -28,45 +25,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install Google Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -fy install
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
 
-      - name: Clean up .deb file
-        run: rm -f google-chrome-stable_current_amd64.deb
-
-      - name: Install jq
-        run: sudo apt-get install -y jq
-
-      - name: Install matching ChromeDriver
-        run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-          echo "Chrome version: $CHROME_VERSION"
-          DRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r --arg ver "$CHROME_VERSION" '.channels.Stable.downloads.chromedriver[] | select(.platform == "linux64") | .url')
-          echo "Downloading Chromedriver from $DRIVER_URL"
-          wget -O chromedriver.zip "$DRIVER_URL"
-          unzip chromedriver.zip
-          if [ -d "chromedriver-linux64" ]; then
-              sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
-          else
-              sudo mv chromedriver /usr/local/bin/chromedriver
-          fi
-          sudo chmod +x /usr/local/bin/chromedriver
+      - name: Setup ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
 
       - name: Run DealTracker
-        run: python tracker.py
         env:
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+        run: |
+          python tracker.py
 
       - name: Commit and push updated data.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add data.json || true
+          git add data.json
           git commit -m "Update data.json [skip ci]" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git push origin HEAD:main

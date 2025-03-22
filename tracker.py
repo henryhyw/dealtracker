@@ -8,20 +8,24 @@ from dotenv import load_dotenv
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from collections import defaultdict
 
-# Define base directory and data file (one shared JSON for all combos)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "data.json")
-DISCOUNT_THRESHOLD = 25  # percent
 
-# Brand-Gender-Size combos
-COMBOS = [
-    ("Arcteryx", "Men", "S"),
-    ("Patagonia", "Unisex", None),
-    ("Patagonia", "Women", "M"),
+FILTER_COMBOS = [
+    {"brand": ["Arc'teryx"], "gender": ["Men"], "size": ["S", "28", "US8.5", "US9"], "threshold": 29},
+    {"brand": ["Arc'teryx"], "gender": ["Unisex"], "size": [], "threshold": 29},
+    {"brand": ["Patagonia"], "gender": ["Men"], "size": ["S", "28"], "threshold": 33},
+    {"brand": ["Patagonia"], "gender": ["Unisex"], "size": [], "threshold": 33},
+    {"brand": ["Mammut"], "gender": ["Men"], "size": ["S", "28"], "threshold": 39},
+    {"brand": ["Icebreaker"], "gender": ["Men"], "size": ["S"], "threshold": 39},
+    {"brand": ["Icebreaker"], "gender": ["Unisex"], "size": [], "threshold": 39},
+    {"brand": ["Salomon"], "gender": ["Men"], "size": ["US8.5", "US9"], "threshold": 33},
+    {"brand": ["The$2520North$2520Face"], "gender": ["Men"], "size": ["S", "28"], "threshold": 39},
+    {"brand": ["The$2520North$2520Face"], "gender": ["Unisex"], "size": [], "threshold": 39}
 ]
 
-# --- Setup headless Chrome ---
 def get_driver():
     options = Options()
     options.add_argument("--headless")
@@ -29,40 +33,61 @@ def get_driver():
     options.add_argument("--no-sandbox")
     return webdriver.Chrome(options=options)
 
-# --- Extract product data including images ---
-def scrape_products(brand, gender, size):
-    url = f"https://www.wildearth.com.au/brand/{brand}#/filter:is_sale:1/filter:gender:{gender}"
-    if size:
-        url += f"/filter:child_sizes:{size}"
+def build_url(filters):
+    url = "https://www.wildearth.com.au/view/sale#/filter:is_sale:1"
+    for f_type, values in filters.items():
+        if f_type == "threshold":
+            continue
+        filter_name = "child_sizes" if f_type == "size" else f_type
+        for val in values:
+            url += f"/filter:{filter_name}:{val}"
+    return url
+
+def scrape_products(combo):
+    url = build_url(combo)
+    threshold = combo.get("threshold", 25)
 
     driver = get_driver()
     driver.get(url)
     time.sleep(5)
+
+    while True:
+        try:
+            load_more = driver.find_element("css selector", "button.ss__pagination__button")
+            if load_more.is_displayed():
+                driver.execute_script("arguments[0].click();", load_more)
+                time.sleep(3)
+            else:
+                break
+        except Exception:
+            break
+
     soup = BeautifulSoup(driver.page_source, "html.parser")
     driver.quit()
 
+    if "No results found" in soup.text:
+        return []
+
     results = []
-    containers = soup.select("article.ss__result")
-    for container in containers:
+    for container in soup.select("article.ss__result"):
         try:
             details = container.select_one("div.ss__result__details")
-            name_tag = details.select_one("h3.ss__result__name a")
-            name = name_tag.text.strip()
-            link = name_tag["href"]
+            name = details.select_one("h3.ss__result__name a").text.strip()
+            link = details.select_one("h3.ss__result__name a")["href"]
 
-            original_price_tag = details.select_one("span.ss__result__msrp")
-            sale_price_tag = details.select_one("span.ss__result__price--on-sale")
-            if not original_price_tag or not sale_price_tag:
+            original_tag = details.select_one("span.ss__result__msrp")
+            sale_tag = details.select_one("span.ss__result__price--on-sale")
+            if not original_tag or not sale_tag:
                 continue
 
-            original = float(original_price_tag.text.replace("$", "").replace(",", ""))
-            sale = float(sale_price_tag.text.replace("$", "").replace(",", ""))
+            original = float(original_tag.text.replace("$", "").replace(",", ""))
+            sale = float(sale_tag.text.replace("$", "").replace(",", ""))
             discount = round((original - sale) / original * 100)
 
             image_tag = container.select_one("figure.ss__result__image img")
-            image_url = image_tag["src"] if image_tag and image_tag.has_attr("src") else ""
+            image_url = image_tag["src"] if image_tag else ""
 
-            if discount >= DISCOUNT_THRESHOLD:
+            if discount >= threshold:
                 results.append({
                     "name": name,
                     "link": link,
@@ -70,111 +95,88 @@ def scrape_products(brand, gender, size):
                     "sale": sale,
                     "discount": discount,
                     "image": image_url,
-                    "brand": brand,
-                    "gender": gender,
-                    "size": size
+                    "brand": combo["brand"][0],
                 })
-        except Exception as e:
-            print("Error parsing product:", e)
+        except:
+            continue
     return results
 
-# --- Load stored data ---
 def load_previous_data():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r") as f:
-            return json.load(f)
-    return []
+    return json.load(open(DATA_FILE)) if os.path.exists(DATA_FILE) else []
 
-# --- Save current data ---
 def save_data(data):
-    with open(DATA_FILE, "w") as f:
-        json.dump(data, f, indent=2)
+    json.dump(data, open(DATA_FILE, "w"), indent=2)
 
-# --- Generate HTML ---
-def generate_html_email(grouped):
-    html = "<h1>🏕️ DealTracker Update</h1>"
-    for combo_key, data in grouped.items():
-        brand, gender, size = combo_key.split("|")
-        title = f"{brand} - {gender}" + (f" - Size {size}" if size != "None" else "")
-        new_items = data["new"]
-        existing_items = data["existing"]
-
-        html += f"<h2>{title}</h2>"
-
-        for section_title, items in [("🆕 New Items", new_items), ("📦 Existing Items", existing_items)]:
-            if not items:
-                continue
-            html += f"<h3>{section_title}</h3><table><tr>"
-            for i, item in enumerate(items):
-                html += f"""
-                <td style='padding:10px; text-align:center;'>
-                    <img src='{item['image']}' width='100'><br>
-                    <b>{item['name']}</b><br>
-                    <small>${item['original']:.2f} → <b>${item['sale']:.2f}</b> ({item['discount']}% off)</small><br>
-                    <a href='{item['link']}'>View</a>
-                </td>
-                """
-                if (i + 1) % 3 == 0:
-                    html += "</tr><tr>"
-            html += "</tr></table>"
+def generate_email(grouped):
+    html = "<h1>🎯 DealTracker Update</h1>"
+    for brand, items in grouped.items():
+        html += f"<h2>{brand}</h2><table><tr>"
+        for i, item in enumerate(items):
+            html += f"""
+            <td style='padding:10px;text-align:center;'>
+            <img src='{item['image']}' width='100'><br>
+            <b>{item['name']}</b><br>
+            ${item['original']:.2f}→<b>${item['sale']:.2f}</b> ({item['discount']}% off)<br>
+            <a href='{item['link']}'>View</a></td>"""
+            if (i+1)%3==0:
+                html+="</tr><tr>"
+        html+="</tr></table>"
     return html
 
-# --- Send email ---
-def send_email(subject, html_body):
+def send_email(subject,html_body):
     load_dotenv()
-    sender = os.getenv("EMAIL_SENDER")
-    password = os.getenv("EMAIL_PASSWORD")
-    receiver = os.getenv("EMAIL_RECEIVER")
+    sender=os.getenv("EMAIL_SENDER")
+    receiver=os.getenv("EMAIL_RECEIVER")
+    password=os.getenv("EMAIL_PASSWORD")
 
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"] = sender
-    msg["To"] = receiver
+    msg=MIMEMultipart("alternative")
+    msg["Subject"]=subject
+    msg["From"]=f"🏷️DealTracker<{sender}>"
+    msg["To"]=receiver
+    msg.attach(MIMEText(html_body,"html"))
 
-    part = MIMEText(html_body, "html")
-    msg.attach(part)
-
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(sender, password)
+    with smtplib.SMTP_SSL("smtp.gmail.com",465) as server:
+        server.login(sender,password)
         server.send_message(msg)
-        print("📬 Email sent!")
 
-# --- Main ---
 def main():
-    print("Scraping current discounted products...")
-    all_current_data = []
-    grouped = {}
+    print("🔍 Loading previous deal data...")
     previous_data = load_previous_data()
     prev_links = {item["link"] for item in previous_data}
+    print(f"✅ Loaded {len(prev_links)} previous items.")
 
-    for brand, gender, size in COMBOS:
-        combo_key = f"{brand}|{gender}|{size}"
-        current = scrape_products(brand, gender, size)
-        all_current_data.extend(current)
+    all_current_data = []
+    new_deals_grouped = defaultdict(list)
 
-        new = [item for item in current if item["link"] not in prev_links]
-        existing = [item for item in current if item["link"] in prev_links]
+    print(f"🚀 Starting scraping for {len(FILTER_COMBOS)} filter combos...")
 
-        grouped[combo_key] = {"new": new, "existing": existing}
+    for idx, combo in enumerate(FILTER_COMBOS, 1):
+        print(f"\n[{idx}/{len(FILTER_COMBOS)}] 🛒 Processing combo: {combo}")
+        current_items = scrape_products(combo)
+        print(f"   📦 Found {len(current_items)} total items for this combo.")
 
-        # Print to console
-        if new:
-            print(f"\n🆕 {combo_key} New Items:")
-            for item in new:
-                print(f"- {item['name']} (${item['original']} → ${item['sale']})")
-        if existing:
-            print(f"\n📦 {combo_key} Existing Items:")
-            for item in existing:
-                print(f"- {item['name']} (${item['original']} → ${item['sale']})")
+        for item in current_items:
+            all_current_data.append(item)
+            if item["link"] not in prev_links:
+                new_deals_grouped[item["brand"]].append(item)
+                print(f"   ➕ New deal found: {item['name']} - ${item['original']}→${item['sale']} ({item['discount']}% off)")
 
-    any_new = any(len(data["new"]) > 0 for data in grouped.values())
-    if any_new:
-        html = generate_html_email(grouped)
-        send_email("🏞️ New Deals Across Brands", html)
+    if new_deals_grouped:
+        print("\n📧 Preparing email with new deals...")
+        html_body = generate_email(new_deals_grouped)
+        subject = "💥 New Deals: " + ", ".join(
+            f"{brand} ({max(item['discount'] for item in items)}% off)"
+            for brand, items in new_deals_grouped.items()
+        )
+        print(f"📨 Sending email: '{subject}'")
+        send_email(subject, html_body)
+        print("✅ Email sent successfully!")
     else:
-        print("\nNo new discounted items across all combos.")
+        print("\nℹ️ No new deals found this time.")
 
+    print("💾 Saving current deal data...")
     save_data(all_current_data)
+    print("✅ Data saved successfully.")
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
