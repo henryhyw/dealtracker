@@ -107,10 +107,14 @@ def load_previous_data():
 def save_data(data):
     json.dump(data, open(DATA_FILE, "w"), indent=2)
 
+def decode_brand_name(brand):
+    return brand.replace('$2520', ' ')
+
 def generate_email(grouped):
     html = "<h1>🎯 DealTracker Update</h1>"
     for brand, items in grouped.items():
-        html += f"<h2>{brand}</h2><table><tr>"
+        display_brand = decode_brand_name(brand)
+        html += f"<h2>{display_brand}</h2><table><tr>"
         for i, item in enumerate(items):
             html += f"""
             <td style='padding:10px;text-align:center;'>
