@@ -32,7 +32,7 @@ FILTER_COMBOS_WILDEARTH = [
 
 # Combos for findyourfeet website
 FILTER_COMBOS_FINDYOURFEET = [
-    {"brand": ["Arcteryx"], "gender": ["Women", "Unisex"], "size": ["S", "28", "9.0+US-M+%2F+8.5+UK+%2F+42.5+EUR", "8.5+US-M+%2F+8.0+UK+%2F+42.0+EUR"], "threshold": 29},
+    {"brand": ["Arcteryx"], "gender": ["Men", "Unisex"], "size": ["S", "28", "9.0+US-M+%2F+8.5+UK+%2F+42.5+EUR", "8.5+US-M+%2F+8.0+UK+%2F+42.0+EUR"], "threshold": 29},
     {"brand": ["Patagonia"], "gender": ["Men", "Unisex"], "size": ["S", "28"], "threshold": 39},
     {"brand": ["Mammut"], "gender": ["Men", "Unisex"], "size": ["S", "28", "9.0+US-M+%2F+8.5+UK+%2F+42.5+EUR", "8.5+US-M+%2F+8.0+UK+%2F+42.0+EUR"], "threshold": 39},
     {"brand": ["Icebreaker"], "gender": ["Men", "Unisex"], "size": ["S"], "threshold": 39},
@@ -174,18 +174,22 @@ def scrape_products_findyourfeet(combo):
                 if detected_gender not in combo.get("gender", []):
                     continue
 
-                link_tag = card.select_one("div.product-card__figure a")
-                link = link_tag["href"] if link_tag and link_tag.has_attr("href") else ""
-                if link.startswith("/"):
-                    link = "https://findyourfeet.com.au" + link
                 image_tag = card.select_one("div.product-card__figure img")
-                image = image_tag["src"] if image_tag and image_tag.has_attr("src") else ""
-                
+                image = ""
+                if image_tag:
+                    if image_tag.has_attr("src"):
+                        image = image_tag["src"]
+                    elif image_tag.has_attr("data-src"):
+                        image = image_tag["data-src"]
+                    elif image_tag.has_attr("data-original"):
+                        image = image_tag["data-original"]
+                    if image.startswith("//"):
+                        image = "https:" + image
+
                 # Extract sale price using regex.
                 sale_price_tag = card.select_one("sale-price.text-on-sale")
                 if sale_price_tag:
                     sale_text = sale_price_tag.get_text(strip=True)
-                    print("   🛠 Debug: sale_text =", sale_text)
                     sale_match = re.search(r"(\d+\.\d+)", sale_text)
                     if sale_match:
                         sale = float(sale_match.group(1))
