@@ -1,10 +1,3 @@
-name: DealTracker
-
-on:
-  schedule:
-    - cron: "0 */3 * * *"  # Every 3 hours (UTC)
-  workflow_dispatch:
-
 jobs:
   tracker:
     runs-on: ubuntu-latest
@@ -25,11 +18,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@latest
+      - name: Setup Firefox
+        uses: browser-actions/setup-firefox@latest
 
-      - name: Setup ChromeDriver
-        uses: nanasess/setup-chromedriver@v2
+      - name: Setup Geckodriver
+        uses: browser-actions/setup-geckodriver@latest
 
       - name: Run DealTracker
         env:
