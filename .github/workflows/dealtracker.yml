@@ -1,3 +1,10 @@
+name: DealTracker
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"  # Every 3 hours (UTC)
+  workflow_dispatch:
+
 jobs:
   tracker:
     runs-on: ubuntu-latest
