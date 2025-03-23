@@ -210,6 +210,11 @@ def scrape_products_findyourfeet(combo):
                 else:
                     continue
 
+                link_tag = card.select_one("div.product-card__figure a")
+                link = link_tag["href"] if link_tag and link_tag.has_attr("href") else ""
+                if link.startswith("/"):
+                    link = "https://findyourfeet.com.au" + link
+
                 discount = round((original - sale) / original * 100)
                 if discount >= threshold:
                     results.append({
