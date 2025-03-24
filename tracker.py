@@ -1,6 +1,11 @@
 import json
 import time
 import os
+import re
+import imaplib
+import email
+from email.header import decode_header
+from datetime import datetime, timedelta
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from bs4 import BeautifulSoup
@@ -9,14 +14,16 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from collections import defaultdict
-import re
+
+# Load environment variables from .env file
+load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "data.json")
 
 # --- Filter Combos ---
 
-# Combos for wildearth website
+# Combos for wildearth website (currently empty, as per your snippet)
 FILTER_COMBOS_WILDEARTH = [
     {"brand": ["Arc'teryx"], "gender": ["Men"], "size": ["S", "28", "US8.5", "US9"], "threshold": 29},
     {"brand": ["Arc'teryx"], "gender": ["Unisex"], "size": [], "threshold": 29},
@@ -54,7 +61,7 @@ def normalize_brand(brand):
             return canonical
     return brand
 
-# --- Selenium Driver ---
+# --- Selenium Driver using Firefox (lightweight for GitHub Actions) ---
 def get_driver():
     options = FirefoxOptions()
     options.add_argument("--headless")
@@ -78,7 +85,6 @@ def scrape_products_wildearth(combo):
     driver = get_driver()
     driver.get(url)
     time.sleep(5)
-    # Click "Load More" until no longer available.
     while True:
         try:
             load_more = driver.find_element("css selector", "button.ss__pagination__button")
@@ -89,7 +95,6 @@ def scrape_products_wildearth(combo):
                 break
         except Exception:
             break
-
     soup = BeautifulSoup(driver.page_source, "html.parser")
     driver.quit()
     if "No results found" in soup.text:
@@ -127,8 +132,7 @@ def scrape_products_wildearth(combo):
 # --- FindYourFeet Functions ---
 def build_url_findyourfeet(filters):
     base_url = "https://findyourfeet.com.au/collections/sale"
-    # Always include availability filter
-    params = ["filter.v.availability=1"]
+    params = ["filter.v.availability=1"]  # Always include availability filter
     for f_type, values in filters.items():
         if f_type in ["threshold", "gender"]:
             continue
@@ -149,13 +153,10 @@ def scrape_products_findyourfeet(combo):
     driver.get(url)
     time.sleep(5)
     results = []
-
     while True:
         soup = BeautifulSoup(driver.page_source, "html.parser")
-
         if "No products match those filters" in soup.text:
             break
-
         product_cards = soup.find_all("product-card")
         for card in product_cards:
             try:
@@ -164,16 +165,16 @@ def scrape_products_findyourfeet(combo):
                     continue
                 title = title_tag.get_text(strip=True)
                 # Determine product gender from title.
-                if "(Women's)" in title:
+                title_lower = title.lower()
+                if any(g in title_lower for g in ["(women)", "(women's)", "(womens)"]):
                     detected_gender = "Women"
-                elif "(Men's)" in title:
+                elif any(g in title_lower for g in ["(men)", "(men's)", "(mens)"]):
                     detected_gender = "Men"
                 else:
                     detected_gender = "Unisex"
                 # Apply gender filter from combo.
                 if detected_gender not in combo.get("gender", []):
                     continue
-
                 image_tag = card.select_one("div.product-card__figure img")
                 image = ""
                 if image_tag:
@@ -185,8 +186,6 @@ def scrape_products_findyourfeet(combo):
                         image = image_tag["data-original"]
                     if image.startswith("//"):
                         image = "https:" + image
-
-                # Extract sale price using regex.
                 sale_price_tag = card.select_one("sale-price.text-on-sale")
                 if sale_price_tag:
                     sale_text = sale_price_tag.get_text(strip=True)
@@ -197,8 +196,6 @@ def scrape_products_findyourfeet(combo):
                         continue
                 else:
                     continue
-
-                # Extract original price using regex.
                 original_price_tag = card.select_one("compare-at-price.text-subdued.line-through")
                 if original_price_tag:
                     original_text = original_price_tag.get_text(strip=True)
@@ -209,12 +206,10 @@ def scrape_products_findyourfeet(combo):
                         continue
                 else:
                     continue
-
                 link_tag = card.select_one("div.product-card__figure a")
                 link = link_tag["href"] if link_tag and link_tag.has_attr("href") else ""
                 if link.startswith("/"):
                     link = "https://findyourfeet.com.au" + link
-
                 discount = round((original - sale) / original * 100)
                 if discount >= threshold:
                     results.append({
@@ -227,10 +222,8 @@ def scrape_products_findyourfeet(combo):
                         "brand": normalize_brand(combo["brand"][0]),
                         "gender": detected_gender
                     })
-            except Exception as e:
+            except Exception:
                 continue
-
-        # Pagination using BeautifulSoup.
         pagination = soup.select_one("nav.collection__pagination")
         if pagination:
             next_link_tag = pagination.select_one("a[rel='next']")
@@ -240,22 +233,25 @@ def scrape_products_findyourfeet(combo):
                 time.sleep(5)
                 continue
         break
-
     driver.quit()
     return results
 
 # --- Data Handling ---
 def load_previous_data():
-    return json.load(open(DATA_FILE)) if os.path.exists(DATA_FILE) else []
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE) as f:
+            data = json.load(f)
+            return data.get("items", []), data.get("last_run")
+    return [], None
 
-def save_data(data):
-    json.dump(data, open(DATA_FILE, "w"), indent=2)
+def save_data(items, timestamp):
+    with open(DATA_FILE, "w") as f:
+        json.dump({"last_run": timestamp, "items": items}, f, indent=2)
 
 # --- Email Generation ---
 def generate_email(grouped):
     html = "<h1>🎯 DealTracker Update</h1>"
     for brand, items in grouped.items():
-        # Sort items in each brand group by discount descending.
         items_sorted = sorted(items, key=lambda x: x["discount"], reverse=True)
         html += f"<h2>{brand}</h2><table><tr>"
         for i, item in enumerate(items_sorted):
@@ -271,7 +267,6 @@ def generate_email(grouped):
     return html
 
 def send_email(subject, html_body):
-    load_dotenv()
     sender = os.getenv("EMAIL_SENDER")
     receiver = os.getenv("EMAIL_RECEIVER")
     password = os.getenv("EMAIL_PASSWORD")
@@ -284,12 +279,51 @@ def send_email(subject, html_body):
         server.login(sender, password)
         server.send_message(msg)
 
+# --- Email Inbox Monitoring and Clean Command ---
+def check_clean_command(last_run_time):
+    imap_host = "imap.gmail.com"
+    username = os.getenv("EMAIL_SENDER")
+    password = os.getenv("EMAIL_PASSWORD")
+    try:
+        mail = imaplib.IMAP4_SSL(imap_host)
+        mail.login(username, password)
+        mail.select("inbox")
+        result, data = mail.search(None, '(SUBJECT "Clean")')
+        email_ids = data[0].split()
+        for eid in email_ids:
+            res, msg_data = mail.fetch(eid, "(RFC822)")
+            if res != "OK":
+                continue
+            msg = email.message_from_bytes(msg_data[0][1])
+            date_tuple = email.utils.parsedate_tz(msg.get("Date"))
+            if date_tuple:
+                email_time = datetime.fromtimestamp(email.utils.mktime_tz(date_tuple))
+                if not last_run_time or email_time > last_run_time:
+                    # Reply to sender
+                    reply_subject = "Re: " + (msg.get("Subject") or "Clean")
+                    reply_body = "Data has been cleared as per your request."
+                    send_email(reply_subject, reply_body)
+                    mail.logout()
+                    return True
+        mail.logout()
+    except Exception as e:
+        print("Error checking inbox:", e)
+    return False
+
 # --- Main Function ---
 def main():
-    print("🔍 Loading previous deal data...")
-    previous_data = load_previous_data()
+    current_time = datetime.now()
+    previous_data, last_run_time = load_previous_data()
+    print(f"✅ Loaded {len(previous_data)} previous items.")
+    print(f"⏰ Last run time: {last_run_time}")
+
+    # If a clean command email was received after last run, clear data
+    if check_clean_command(datetime.fromisoformat(last_run_time) if last_run_time else None):
+        print("🧹 Clean command detected. Clearing data.json.")
+        previous_data = []
+
     prev_links = {item["link"] for item in previous_data}
-    print(f"✅ Loaded {len(prev_links)} previous items.")
+    prev_names = {item["name"] for item in previous_data}
 
     all_current_data = []
     new_deals_grouped = defaultdict(list)
@@ -314,7 +348,7 @@ def main():
         print(f"   📦 Found {len(current_items)} items for this combo.")
         for item in current_items:
             all_current_data.append(item)
-            if item["link"] not in prev_links:
+            if item["name"] not in prev_names:
                 new_deals_grouped[item["brand"]].append(item)
                 print(f"   ➕ New deal found: {item['name']} - ${item['original']}→${item['sale']} ({item['discount']}% off)")
 
@@ -331,8 +365,10 @@ def main():
     else:
         print("\nℹ️ No new deals found this time.")
 
-    print("💾 Saving current deal data...")
-    save_data(all_current_data)
+    # Append new deals to previous data and save combined list.
+    combined_data = previous_data + [item for item in all_current_data if item["link"] not in prev_links]
+    print("💾 Saving data.json with a total of", len(combined_data), "items.")
+    save_data(combined_data, current_time.isoformat())
     print("✅ Data saved successfully.")
 
 if __name__ == "__main__":
