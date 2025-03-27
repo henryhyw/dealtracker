@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-03-27T09:27:15.353183",
+  "last_run": "2025-03-27T09:43:54.676277",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -10739,6 +10739,46 @@
       "discount": 40,
       "image": "https://findyourfeet.com.au/cdn/shop/files/2dbd5d44e93e200201448f52a7f6e901efb87737.webp?v=1719978332&width=4000",
       "brand": "On Running",
+      "gender": "Men"
+    },
+    {
+      "name": "Patagonia AlpLoft Parka (Unisex) Touring Red",
+      "link": "https://findyourfeet.com.au/products/patagonia-alploft-parka-unisex-touring-red?_pos=1&_fid=fcd4177ce&_ss=c&variant=45954664333541",
+      "original": 899.95,
+      "sale": 539.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/85600_TGRD_2048x_0d413f02-f85c-4f90-90f4-b9b6e500e9e8.webp?v=1717261438&width=2048",
+      "brand": "Patagonia",
+      "gender": "Unisex"
+    },
+    {
+      "name": "Patagonia Nano-Air Light Hybrid Hoody (Men's) Black",
+      "link": "https://findyourfeet.com.au/products/patagonia-nano-air-light-hybrid-hoody-mens?_pos=11&_fid=fcd4177ce&_ss=c&variant=43884029935845",
+      "original": 469.95,
+      "sale": 281.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/84416_BLK_2048x_0c2a1112-0374-4c0a-8bef-7e02cdca9ed6.webp?v=1691476115&width=2000",
+      "brand": "Patagonia",
+      "gender": "Men"
+    },
+    {
+      "name": "Patagonia Go To Shirt (Men's) Flying Climb: Tidepool Blue",
+      "link": "https://findyourfeet.com.au/products/patagonia-go-to-shirt-mens?_pos=46&_fid=6a6eb6ed5&_ss=c&variant=44204565823717",
+      "original": 99.95,
+      "sale": 59.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/detail-52691_FLTI_P.png?v=1693362218&width=315",
+      "brand": "Patagonia",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Merino Blend 200 Realfleece Descender LS Zip Hoodie (Men's) Black/Graphite",
+      "link": "https://findyourfeet.com.au/products/merino-blend-200-realfleece-descender-ls-zip-hoodie-mens?_pos=10&_fid=f6aa9b761&_ss=c&variant=44997052989669",
+      "original": 269.95,
+      "sale": 134.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/0A56VZB54_1.jpg?v=1711329162&width=1290",
+      "brand": "Icebreaker",
       "gender": "Men"
     }
   ]
