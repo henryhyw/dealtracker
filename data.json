@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-04-04T20:42:40.580313",
+  "last_run": "2025-04-04T21:22:33.475770",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -43350,6 +43350,306 @@
       "image": "https://findyourfeet.com.au/cdn/shop/products/LC1758400_857e0035cc18aebd388994c530b6d643_e0575a7f-a3a6-4e58-8280-96738ca9077b.webp?v=1680665671&width=500",
       "brand": "Salomon",
       "gender": "Unisex"
+    },
+    {
+      "name": "Patagonia AlpLoft Parka (Unisex) Touring Red",
+      "link": "https://findyourfeet.com.au/products/patagonia-alploft-parka-unisex-touring-red?_pos=1&_fid=7360a382f&_ss=c&variant=45954664333541",
+      "original": 899.95,
+      "sale": 539.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/85600_TGRD_2048x_0d413f02-f85c-4f90-90f4-b9b6e500e9e8.webp?v=1717261438&width=2048",
+      "brand": "Patagonia",
+      "gender": "Unisex"
+    },
+    {
+      "name": "Patagonia Nano-Air Light Hybrid Hoody (Men's) Black",
+      "link": "https://findyourfeet.com.au/products/patagonia-nano-air-light-hybrid-hoody-mens?_pos=13&_fid=7360a382f&_ss=c&variant=43884029935845",
+      "original": 469.95,
+      "sale": 281.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/84416_BLK_2048x_0c2a1112-0374-4c0a-8bef-7e02cdca9ed6.webp?v=1691476115&width=2000",
+      "brand": "Patagonia",
+      "gender": "Men"
+    },
+    {
+      "name": "Patagonia Capilene Midweight Crew (Men's) Belay Blue",
+      "link": "https://findyourfeet.com.au/products/patagonia-capilene-midweight-crew-mens-belay-blue?_pos=53&_fid=c48587c10&_ss=c&variant=45954692808933",
+      "original": 119.95,
+      "sale": 71.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/44427_BLYB_2048x_05d097c7-6522-4bb0-b779-47eb9a27037b.webp?v=1712106428&width=2048",
+      "brand": "Patagonia",
+      "gender": "Men"
+    },
+    {
+      "name": "Patagonia Go To Shirt (Men's) Flying Climb: Tidepool Blue",
+      "link": "https://findyourfeet.com.au/products/patagonia-go-to-shirt-mens?_pos=69&_fid=c48587c10&_ss=c&variant=44204565823717",
+      "original": 99.95,
+      "sale": 59.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/detail-52691_FLTI_P.png?v=1693362218&width=315",
+      "brand": "Patagonia",
+      "gender": "Men"
+    },
+    {
+      "name": "Patagonia L/S Capilene Cool Trail Shirt (Men's) Nouveau Green",
+      "link": "https://findyourfeet.com.au/products/patagonia-l-s-capilene-cool-trail-shirt-mens-nouveau-green?_pos=75&_fid=c48587c10&_ss=c&variant=45954758443237",
+      "original": 89.95,
+      "sale": 53.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/24487_NUVG_2048x_dbd0e9ae-96c6-4e0d-afc1-d0048fbb1461.webp?v=1733072566&width=2048",
+      "brand": "Patagonia",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Merino Cable Knit Crewe Sweater (Men's) Loden",
+      "link": "https://findyourfeet.com.au/products/icebreaker-merino-cable-knit-crewe-sweater-loden-mens?_pos=3&_fid=9e3c23487&_ss=c&variant=45937101603045",
+      "original": 379.95,
+      "sale": 189.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/0A56S5069_1.jpg?v=1715654873&width=1290",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Merino Cable Knit Crewe Sweater (Men's) Undyed",
+      "link": "https://findyourfeet.com.au/products/icebreaker-merino-cable-knit-crewe-sweater-mens?_pos=5&_fid=9e3c23487&_ss=c&variant=45573105418469",
+      "original": 379.95,
+      "sale": 189.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/0A56S5000_front.jpg?v=1715657522&width=1130",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Quantum IV LS Zip Hoodie (Men's) Black",
+      "link": "https://findyourfeet.com.au/products/icebreaker-quantum-iv-ls-zip-hoodie-black-mens?_pos=13&_fid=9e3c23487&_ss=c&variant=45934712455397",
+      "original": 319.95,
+      "sale": 159.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/0A56W2001_front.jpg?v=1709003603&width=1129",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Quantum III LS Zip Hoodie (Men's)",
+      "link": "https://findyourfeet.com.au/products/icebreaker-quantum-iii-ls-zip-hoodie-mens?_pos=14&_fid=9e3c23487&_ss=c&variant=39471593586765",
+      "original": 319.95,
+      "sale": 159.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/ib-quantum-iii-mens-hood-black.jpg?v=1732233483&width=700",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Merino Blend 200 Realfleece Descender LS Zip Hoodie (Men's) Black/Graphite",
+      "link": "https://findyourfeet.com.au/products/merino-blend-200-realfleece-descender-ls-zip-hoodie-mens?_pos=16&_fid=9e3c23487&_ss=c&variant=44997052989669",
+      "original": 269.95,
+      "sale": 134.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/0A56VZB54_1.jpg?v=1711329162&width=1290",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Original LS Half Zip (Men's) Black",
+      "link": "https://findyourfeet.com.au/products/icebreaker-original-ls-half-zip-black-mens?_pos=19&_fid=9e3c23487&_ss=c&variant=45934765965541",
+      "original": 219.95,
+      "sale": 109.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/100871001_1.jpg?v=1584079193&width=1290",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker 260 Tech LS Crewe (Men's) Loden",
+      "link": "https://findyourfeet.com.au/products/icebreaker-260-tech-ls-crewe-mens-loden?_pos=29&_fid=7a9325681&_ss=c&variant=46255912485093",
+      "original": 159.99,
+      "sale": 80.0,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/122786_1_thumbnail_2525x1220_page1_2049882.jpg?v=1694748817&width=930",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker Anatomica SS Crewe (Men's) Jet Heather",
+      "link": "https://findyourfeet.com.au/products/icebreaker-anatomica-ss-crewe-jet-heather-mens?_pos=42&_fid=7a9325681&_ss=c&variant=45932490981605",
+      "original": 89.95,
+      "sale": 44.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/103033002_6.jpg?v=1659941441&width=1290",
+      "brand": "Icebreaker",
+      "gender": "Men"
+    },
+    {
+      "name": "Salomon Adv Skin Belt (Unisex) Surf The Web",
+      "link": "https://findyourfeet.com.au/products/salomon-adv-skin-belt-unisex-surf-the-web?_pos=8&_fid=c98426aa9&_ss=c&variant=44194325889253",
+      "original": 79.95,
+      "sale": 50.0,
+      "discount": 37,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/LC2012000_0_GHO_ADVSKINBELT-SurfTheWeb_720x_d84424bf-320f-4abd-8d15-9290b301844d.webp?v=1692588519&width=720",
+      "brand": "Salomon",
+      "gender": "Unisex"
+    },
+    {
+      "name": "Salomon Adv Skin Belt (Unisex) Goji Berry",
+      "link": "https://findyourfeet.com.au/products/salomon-adv-skin-belt-unisex-goji-berry?_pos=9&_fid=c98426aa9&_ss=c&variant=43999008555237",
+      "original": 79.95,
+      "sale": 50.0,
+      "discount": 37,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/LC1758400_857e0035cc18aebd388994c530b6d643_e0575a7f-a3a6-4e58-8280-96738ca9077b.webp?v=1680665671&width=500",
+      "brand": "Salomon",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Dryzzle FL Jacket (Men's)",
+      "link": "https://findyourfeet.com.au/products/the-north-face-dryzzle-futurelight-jacket-mens?_pos=11&_fid=904b64cc8&_ss=c&variant=39555594190925",
+      "original": 549.95,
+      "sale": 275.0,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/NF0A4AHMJK3_1.jpg?v=1637117802&width=600",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Aconcagua 3 Hoody (Men's) Pine Needle",
+      "link": "https://findyourfeet.com.au/products/the-north-face-aconcagua-3-hoody-mens-pine-needle?_pos=17&_fid=904b64cc8&_ss=c&variant=45932394316005",
+      "original": 399.95,
+      "sale": 199.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/NF0A84I1I0P_1.jpg?v=1712634060&width=1000",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Dryzzle FL Full Zip Pants (Men's) TNF Black",
+      "link": "https://findyourfeet.com.au/products/the-north-face-dryzzle-full-zip-futurelight-pant-mens?_pos=20&_fid=904b64cc8&_ss=c&variant=31918467973197",
+      "original": 399.95,
+      "sale": 190.0,
+      "discount": 52,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/NF0A4AHLJK3_R_1_9a3b28f6-a1f8-40e8-9a75-aa86ea0bd59f.jpg?v=1653440421&width=1000",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Aconcagua 3 Jacket (Men's) Pine Needle",
+      "link": "https://findyourfeet.com.au/products/the-north-face-aconcagua-3-jacket-mens-pine-needle?_pos=30&_fid=4fd75d4bb&_ss=c&variant=45932409684197",
+      "original": 349.95,
+      "sale": 174.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/NF0A84HZI0P_1.jpg?v=1712633428&width=1000",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Flight Training Pack 12 (Unisex) TNF Black/TNF Black",
+      "link": "https://findyourfeet.com.au/products/the-north-face-flight-training-pack-12?_pos=32&_fid=4fd75d4bb&_ss=c&variant=39297567162445",
+      "original": 329.95,
+      "sale": 164.98,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/NF0A52CWKX7_1.jpg?v=1617947998&width=600",
+      "brand": "The North Face",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Half Dome PO Hoodie (Men's) Aviator Navy",
+      "link": "https://findyourfeet.com.au/products/the-north-face-half-dome-po-hoodie-mens?_pos=60&_fid=4fd75d4bb&_ss=c&variant=39507659522125",
+      "original": 119.95,
+      "sale": 70.0,
+      "discount": 42,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/download_19_3ece8e44-40d7-4067-a267-4920bb2211f5.png?v=1634603897&width=700",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Half Dome PO Hoodie (Men's) TNF Black",
+      "link": "https://findyourfeet.com.au/products/the-north-face-half-dome-po-hoodie-mens-tnf-black?_pos=63&_fid=4fd75d4bb&_ss=c&variant=44006940016869",
+      "original": 119.95,
+      "sale": 70.0,
+      "discount": 42,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/download_17_8661fd23-f75f-443e-811a-83f904cf2c22.png?v=1681170314&width=700",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Wander Short Sleeve Tee (Men's)",
+      "link": "https://findyourfeet.com.au/products/the-north-face-wander-short-sleeve-tee-mens?_pos=69&_fid=4fd75d4bb&_ss=c&variant=44636459958501",
+      "original": 89.95,
+      "sale": 53.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/NF0A7WUUJK3_1.jpg?v=1707185375&width=1000",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Wander Shorts (Men's)",
+      "link": "https://findyourfeet.com.au/products/the-north-face-wander-shorts-mens?_pos=70&_fid=4fd75d4bb&_ss=c&variant=42092484067557",
+      "original": 89.95,
+      "sale": 53.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/NF0A535QJK3_R_1.jpg?v=1676001167&width=600",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Heavyweight Box SS Tee (Men's) TNF Medium Grey Heather",
+      "link": "https://findyourfeet.com.au/products/the-north-face-heavyweight-box-ss-tee-mens-tnf-medium-grey-heather?_pos=75&_fid=4fd75d4bb&_ss=c&variant=44186042499301",
+      "original": 69.95,
+      "sale": 35.0,
+      "discount": 50,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/NF0A7QC3DYY_3_07ffd152-2186-4fde-93b8-f6ebf825dfcf.jpg?v=1692060408&width=600",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "On Cloudultra 2 (Men's)",
+      "link": "https://findyourfeet.com.au/products/on-cloudultra-2-shoe-mens?_pos=11&_fid=cf1da485d&_ss=c&variant=44240141811941",
+      "original": 279.95,
+      "sale": 167.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/SmallJPEG-3MD30280485-cloudultra_2-fw23-all_black-m-g1.jpg?v=1743724667&width=1024",
+      "brand": "On Running",
+      "gender": "Men"
+    },
+    {
+      "name": "On Cloudstratus 3 Shoe (Men's)",
+      "link": "https://findyourfeet.com.au/products/on-cloudstratus-3-shoe-mens-metal-wisteria?_pos=12&_fid=cf1da485d&_ss=c&variant=44208290070757",
+      "original": 269.95,
+      "sale": 161.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/3MD301112345.jpg?v=1693541653&width=609",
+      "brand": "On Running",
+      "gender": "Men"
+    },
+    {
+      "name": "On Cloudsurfer Shoe (Men's)",
+      "link": "https://findyourfeet.com.au/products/on-cloudsurfer-shoe-mens-all-black?_pos=13&_fid=cf1da485d&_ss=c&variant=43973832114405",
+      "original": 259.95,
+      "sale": 155.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/webimage-072B9C30-4033-4C36-B1C30116B75438FB.png?v=1679371012&width=600",
+      "brand": "On Running",
+      "gender": "Men"
+    },
+    {
+      "name": "On Cloudsurfer Trail Shoe (Men's)",
+      "link": "https://findyourfeet.com.au/products/on-cloudsurfer-trail-shoe-mens?_pos=14&_fid=cf1da485d&_ss=c&variant=44904283308261",
+      "original": 259.95,
+      "sale": 155.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/files/c8ioa6klcdafupuvrihu.webp?v=1710886323&width=4000",
+      "brand": "On Running",
+      "gender": "Men"
+    },
+    {
+      "name": "On Cloud 5 Shoe (Men's)",
+      "link": "https://findyourfeet.com.au/products/on-cloud-5-shoe-mens?_pos=16&_fid=cf1da485d&_ss=c&variant=42755082911973",
+      "original": 239.95,
+      "sale": 143.97,
+      "discount": 40,
+      "image": "https://findyourfeet.com.au/cdn/shop/products/59.98986-cloud_5-ss22-all_black-m-g1.jpg?v=1649723072&width=600",
+      "brand": "On Running",
+      "gender": "Men"
     }
   ]
 }
