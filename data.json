@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-04-16T23:42:34.941919",
+  "last_run": "2025-04-17T01:59:33.579780",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54209,6 +54209,16 @@
       "discount": 35,
       "image": "https://www.wildearth.com.au/assets/thumb/X00000605903-M-R.png?20240404084629",
       "brand": "Arc'teryx",
+      "gender": "Men"
+    },
+    {
+      "name": "Icebreaker 150 Tech Lite Southern Constellation Mens Short Sleeve Merino T-Shirt - Baja",
+      "link": "https://www.wildearth.com.au/buy/icebreaker-mens-merino-150-tech-lite-ss-tee-southe/IB0A575O01D100S",
+      "original": 119.99,
+      "sale": 71.99,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/IB0A575O01D100S.jpg?20240814124854",
+      "brand": "Icebreaker",
       "gender": "Men"
     }
   ]
