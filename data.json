@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-04-22T17:22:55.498680",
+  "last_run": "2025-04-22T17:42:53.158612",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54220,6 +54220,26 @@
       "image": "https://www.wildearth.com.au/assets/thumb/IB0A575O01D100S.jpg?20240814124854",
       "brand": "Icebreaker",
       "gender": "Men"
+    },
+    {
+      "name": "Arcteryx Cranbrook Unisex Wide Brim Hat - Stone Wash",
+      "link": "https://www.wildearth.com.au/buy/arcteryx-cranbrook-hat-stone-wash-s-m/X00000648301-S-M",
+      "original": 140.0,
+      "sale": 84.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/X00000648301-S-M.jpg?20240729131945",
+      "brand": "Arc'teryx",
+      "gender": "Unisex"
+    },
+    {
+      "name": "Arcteryx Conveyor Belt - 38mm - Edziza",
+      "link": "https://www.wildearth.com.au/buy/arcteryx-conveyor-belt-38mm-edziza-s/X00000552104-S",
+      "original": 70.0,
+      "sale": 42.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/X00000552104-S.jpg?20240729104850",
+      "brand": "Arc'teryx",
+      "gender": "Unisex"
     }
   ]
 }
