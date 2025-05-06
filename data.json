@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-05-06T02:03:42.346701",
+  "last_run": "2025-05-06T03:28:33.177475",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54240,6 +54240,36 @@
       "image": "https://www.wildearth.com.au/assets/thumb/X00000552104-S.jpg?20240729104850",
       "brand": "Arc'teryx",
       "gender": "Unisex"
+    },
+    {
+      "name": "Arcteryx Norvan Running Belt - Black",
+      "link": "https://www.wildearth.com.au/buy/arcteryx-norvan-belt-black-l/X00000751601-L",
+      "original": 120.0,
+      "sale": 84.0,
+      "discount": 30,
+      "image": "https://www.wildearth.com.au/assets/thumb/X00000751601-L.jpg?20240404084629",
+      "brand": "Arc'teryx",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Chakal Mens Snow Jacket - Dark Sage/TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-mens-chakal-jacket-dark-sage-tnf-bl/NF0A5GM3KIB-R0S",
+      "original": 700.0,
+      "sale": 420.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A5GM3KIB-R0S.png?20240404084629",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Freedom Bib Mens Snow Pants - TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-mens-freedom-bib-tnf-black-s/NF0A5ABTJK3-R-R0S",
+      "original": 400.0,
+      "sale": 240.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A5ABTJK3-R-R0S.png?20240404084629",
+      "brand": "The North Face",
+      "gender": "Men"
     }
   ]
 }
