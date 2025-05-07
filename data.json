@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-05-06T23:42:22.050279",
+  "last_run": "2025-05-07T02:04:31.504825",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54269,6 +54269,16 @@
       "discount": 40,
       "image": "https://www.wildearth.com.au/assets/thumb/NF0A5ABTJK3-R-R0S.png?20240404084629",
       "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "Arcteryx Rush Bib GTX Mens Pants - Regular - Boxcar",
+      "link": "https://www.wildearth.com.au/buy/arcteryx-rush-bib-mens-boxcar-s-r/X00000605903-S-R",
+      "original": 1100.0,
+      "sale": 550.0,
+      "discount": 50,
+      "image": "https://www.wildearth.com.au/assets/thumb/X00000605903-S-R.png?20240404084629",
+      "brand": "Arc'teryx",
       "gender": "Men"
     }
   ]
