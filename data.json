@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-05-07T02:04:31.504825",
+  "last_run": "2025-05-07T03:29:29.272400",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54280,6 +54280,26 @@
       "image": "https://www.wildearth.com.au/assets/thumb/X00000605903-S-R.png?20240404084629",
       "brand": "Arc'teryx",
       "gender": "Men"
+    },
+    {
+      "name": "Patagonia Fjord Flannel Mens Long Sleeve Shirt - Whole Weave: Forge Grey",
+      "link": "https://www.wildearth.com.au/buy/patagonia-mens-fjord-flannel-shirt-whole-weave-for/42401-WHFO-L",
+      "original": 159.95,
+      "sale": 79.98,
+      "discount": 50,
+      "image": "https://www.wildearth.com.au/assets/thumb/42401-WHFO-L.png?20240815135918",
+      "brand": "Patagonia",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Rolling Thunder 22in Wheeled Carry-On - TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-rolling-thunder-22-rolling-luggage/NF0A3C94JK3",
+      "original": 550.0,
+      "sale": 330.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A3C94JK3.jpg",
+      "brand": "The North Face",
+      "gender": "Unisex"
     }
   ]
 }
