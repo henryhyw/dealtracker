@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-05-27T07:42:36.837110",
+  "last_run": "2025-05-27T08:34:14.253641",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54340,6 +54340,76 @@
       "image": "https://www.wildearth.com.au/assets/thumb/L08529200-LR.jpg?20240404084629?1747957743",
       "brand": "Arc'teryx",
       "gender": "Men"
+    },
+    {
+      "name": "The North Face Montana Mens Ski Gloves - TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-mens-montana-ski-glove-tnf-black-s/NF0A89QGJK3-R0S",
+      "original": 160.0,
+      "sale": 96.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A89QGJK3-R0S.png?20250519143037?1748232157",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Cypress Bucket Hat - TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-cypress-bucket-tnf-black-s-m/NF0A7WHAJK3-SMS",
+      "original": 70.0,
+      "sale": 35.0,
+      "discount": 50,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A7WHAJK3-SMS.png?20240404084629?1748232157",
+      "brand": "The North Face",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Backpack Raincover  - TNF Black - TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-pack-rain-cover-unisex-tnf-black-xl/NF00CA7ZJK3-XL",
+      "original": 60.0,
+      "sale": 30.0,
+      "discount": 50,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF00CA7ZJK3-XL.jpg?20240404084629?1748232157",
+      "brand": "The North Face",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Fisherman Beanie - TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-tnf-fisherman-mens-beanie-tnf-black/NF0A55JGJK3",
+      "original": 45.0,
+      "sale": 27.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A55JGJK3.jpg?20240404084629?1748232157",
+      "brand": "The North Face",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Recycled 66 Classic Hat - Summit Navy",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-recycled-66-classic-mens-hat-smmtnv/NF0A4VSV8K2",
+      "original": 50.0,
+      "sale": 30.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A4VSV8K2.jpg?20240404084629?1748232157",
+      "brand": "The North Face",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Jester 28L Mens Daypack - TNF Red/TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-jester-unisex-tnf-red-tnf-black/NF0A3VXFKZ3",
+      "original": 140.0,
+      "sale": 84.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A3VXFKZ3.png?20240404084629?1748232157",
+      "brand": "The North Face",
+      "gender": "Unisex"
+    },
+    {
+      "name": "The North Face Salty Lined Beanie - Shady Blue",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-salty-dog-mens-beanie-shady-blue/NF0A3FJWHDC-R",
+      "original": 50.0,
+      "sale": 30.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A3FJWHDC-R.jpg?20240404084629?1748232157",
+      "brand": "The North Face",
+      "gender": "Unisex"
     }
   ]
 }
