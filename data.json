@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-06-03T17:25:20.910215",
+  "last_run": "2025-06-03T18:37:19.444263",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54440,6 +54440,16 @@
       "image": "https://www.wildearth.com.au/assets/thumb/NF0A7WHOJK3.png?20250519143037?1748915155",
       "brand": "The North Face",
       "gender": "Unisex"
+    },
+    {
+      "name": "Arcteryx Beta GTX Mens Waterproof Pants - Black",
+      "link": "https://www.wildearth.com.au/buy/arcteryx-beta-mens-pant-black-sr/L08529200-SR",
+      "original": 500.0,
+      "sale": 300.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/L08529200-SR.jpg?20240404084629?1748927678",
+      "brand": "Arc'teryx",
+      "gender": "Men"
     }
   ]
 }
