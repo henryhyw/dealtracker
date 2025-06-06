@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-06-06T17:24:55.648604",
+  "last_run": "2025-06-06T17:44:41.725823",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54450,6 +54450,16 @@
       "image": "https://www.wildearth.com.au/assets/thumb/L08529200-SR.jpg?20240404084629?1748927678",
       "brand": "Arc'teryx",
       "gender": "Men"
+    },
+    {
+      "name": "The North Face Cragmont Unisex Bucket Hat - TNF Black",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-cragmont-bucket-tnf-black-l-xl/NF0A8882JK3-WLX",
+      "original": 80.0,
+      "sale": 48.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A8882JK3-WLX.png?20250519143037?1749098334",
+      "brand": "The North Face",
+      "gender": "Unisex"
     }
   ]
 }
