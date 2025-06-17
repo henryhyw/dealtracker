@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-06-17T04:34:57.711728",
+  "last_run": "2025-06-17T05:27:01.944944",
   "items": [
     {
       "name": "Arcteryx Rho LT Mens Baselayer Bottoms - Smoke Bluff",
@@ -54469,6 +54469,46 @@
       "discount": 30,
       "image": "https://www.wildearth.com.au/assets/thumb/X00000752004-S.png?20240404084629?1749617233",
       "brand": "Arc'teryx",
+      "gender": "Men"
+    },
+    {
+      "name": "Salomon Genesis Mens Trail Running Shoes - Black/Electric Green/Cherry Tomato",
+      "link": "https://www.wildearth.com.au/buy/salomon-mens-genesis-black-electric-green-cherry-t/L47688200-10",
+      "original": 269.99,
+      "sale": 161.99,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/L47688200-10.jpg?20250519143037?1750129422",
+      "brand": "Salomon",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Freedom Bib Mens Snow Pants - Clay Grey",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-mens-freedom-bib-clay-grey-s/NF0A5ABT1I4-R-R0S",
+      "original": 450.0,
+      "sale": 270.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A5ABT1I4-R-R0S.png?20250519143037?1750129422",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Freedom Mens Insulated Ski Jacket - Meadow Grass/Forest Olive",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-mens-freedom-insulated-jacket-meado/NF0A82VU5QI-R0S",
+      "original": 600.0,
+      "sale": 360.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A82VU5QI-R0S.png?20250519143037?1750129422",
+      "brand": "The North Face",
+      "gender": "Men"
+    },
+    {
+      "name": "The North Face Freedom Mens Snow Pants - Meadow Grass",
+      "link": "https://www.wildearth.com.au/buy/the-north-face-mens-freedom-pant-meadow-grass-s/NF0A5ABV1MO-R-R0S",
+      "original": 300.0,
+      "sale": 180.0,
+      "discount": 40,
+      "image": "https://www.wildearth.com.au/assets/thumb/NF0A5ABV1MO-R-R0S.png?20250519143037?1750129422",
+      "brand": "The North Face",
       "gender": "Men"
     }
   ]
